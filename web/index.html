@@ -6,18 +6,35 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<title>Restful Doc:Restful Api Document Tools</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 	<body>
-		<div id="head" style="width:100%;height:10%;">
-			<h1>Restful Doc</h1>
-			<p>
-				A web application that helps create document, export sources and tests code of restful api <br/>
-				for java and other languanges.
-			</p>
-			<ul>
-				<li><a href="user_register.html">注册用户</a></li>
-				<li><a href="user_list.html">用户列表</a></li>
-			</ul>
+		<div class="mainBoard">
+			<div class="header">
+				<div class="login">
+					<form method="POST" id="formLogin">
+						用户名：<input type="text" name="username"/>
+						密  码：<input type="password" name="password"/>
+						<button type="submit">登陆</button>
+						<button type="btnRegister">注册</button>
+					</form>
+				</div>
+				<h1>Restful Document Tool</h1>
+			</div>
+			<div id="nav" class="nav">
+				<ul>
+					<li><a href="nav.html" target="iframe_a">主页</a></li>
+					<li><a href="user_register.html" target="iframe_a">注册用户</a></li>
+					<li><a href="user_list.html" target="iframe_a">用户列表</a></li>
+				</ul>
+			</div>
+			<iframe class="content" name="iframe_a" frameborder="0" width="100%">
+				<p>
+					A web application that helps create document, export sources and tests code of restful api <br/>
+					for java and other languanges.
+				</p>
+			</iframe>
+			<div class="footer">Copy Right. 2015. www.duoshenyi.com</div>
 		</div>
 	</body>
 </html>

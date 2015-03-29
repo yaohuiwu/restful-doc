@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 
@@ -53,7 +54,8 @@ public class UserController {
     }
 
     @RequestMapping(method = {RequestMethod.GET})
-    public ResponseEntity<Object> getUsers(){
-        return new ResponseEntity<Object>(userService.getUsers(), HttpStatus.OK);
+    public ResponseEntity<Object> getUsers(@RequestParam(value = "filterText", required = false) String filterText){
+        LOG.debug("filterText:{}", filterText);
+        return new ResponseEntity<Object>(userService.getUsers(filterText), HttpStatus.OK);
     }
 }

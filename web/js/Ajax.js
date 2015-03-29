@@ -58,6 +58,19 @@ var Ajax = {
                 callback(ajaxResult);
             }
         };
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+        xhr.open("get", url, false);
+        xhr.send(null);
+    },
+    get : function(url, params, callback){
+        var xhr = this.createXHR();
+        //set listener before open.
+        xhr.onreadystatechange = function(event){
+            if(xhr.readyState == 4){
+                var ajaxResult = new AjaxResult(JSON.parse(xhr.responseText), xhr.status,xhr.responseText);
+                callback(ajaxResult);
+            }
+        };
         xhr.open("get", url, false);
         xhr.send(null);
     }

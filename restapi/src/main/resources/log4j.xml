@@ -31,7 +31,7 @@
     </logger>
     
     <logger name="org.springframework.web.servlet" additivity="false">
-        <level value ="debug"/>
+        <level value ="error"/>
         <appender-ref ref="console"/>
     </logger>
 

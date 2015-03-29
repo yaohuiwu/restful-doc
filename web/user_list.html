@@ -6,17 +6,88 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<title>Register user.</title>
+		<style type="text/css">
+			table.th0{
+				border-collapse: separate;
+				border-spacing: 0;
+				text-align: center;
+				color: #333;
+				width: 100%;
+			}
+
+			.th0 th, .th0 td{
+				margin: 0;
+				padding: 0;
+			}
+
+			/*.th0 caption{*/
+				/*font-size: 1.25em;*/
+				/*padding-top: 0.692em;*/
+				/*padding-bottom: 0.692em;*/
+				/*background-color: #d4dd46;*/
+			/*}*/
+
+			.th0 thead th {
+				background-color: #d4dd46;
+				border-bottom: 3px solid #a9bacb;
+				font-size: 1.087em;
+			}
+
+			.th0 tbody tr:hover{
+				background-color: #d4dd46;
+			}
+
+			.th0 tbody td{
+				border-bottom: 1px solid #a9bacb;
+				text-align: left;
+			}
+
+			fieldset{
+				margin: 1em 0;
+				padding: 1em;
+				border: 1px solid #ccc;
+				background: #f8f8f8;
+			}
+			legend{
+				font-weight: bold;
+			}
+			label {
+				padding-right: 5px;
+				/*display: block;*/
+				cursor: pointer;
+			}
+			input{
+				width: 10em;
+				border: 1px solid grey;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>用户列表</h1>
-		<table id="userTable">
+		<form id="queryUserList">
+			<fieldset>
+				<legend>查询用户</legend>
+				<div>
+					<label>模糊查询:</label><input type="text" id="filterText" name="filterText">
+					<button type="submit">提交</button>
+				</div>
+			</fieldset>
+		</form>
+		<!--<h3>用户列表</h3>-->
+		<table id="userTable" class="th0" summary="user list">
+			<caption>用户列表</caption>
+			<colgroup>
+				<col id="username"/>
+				<col id="account"/>
+				<col id="mobilePhone"/>
+			</colgroup>
 			<thead>
 				<tr>
-					<th>用户名</th>
-					<th>帐号</th>
-					<th>手机号</th>
+					<th scope="col">用户名</th>
+					<th scope="col">帐号</th>
+					<th scope="col">手机号</th>
 				</tr>
 			</thead>
+			<tbody></tbody>
 		</table>
 		<script type="text/javascript" src="js/EventUtil.js"></script>
 		<script type="text/javascript" src="js/Ajax.js"></script>

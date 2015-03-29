@@ -5,21 +5,41 @@
 var userTable = document.getElementById("userTable");
 Ajax.loadList("/restapi/users", function(result){
     if(result.isSuccess){
-
-        var array = result.data;
-        //alert(result.responseText);
-        var tBody = document.createElement("tbody");
-
-        for(var i= 0,len = array.length; i<len; i++){
-            var tr = createRow(array[i]);
-            tBody.appendChild(tr);
-        }
-
-        userTable.appendChild(tBody);
+        renderUserList(userTable, result.data);
     }else{
         alert("load list failed!" + result.data.message);
     }
 });
+
+var queryUserListFm = document.getElementById("queryUserList");
+EventUtil.addHandler(queryUserListFm, "submit", function(event){
+    var event = EventUtil.getEvent(event);
+    EventUtil.preventDefault(event);
+
+    var queryString = "filterText=" + encodeURIComponent(queryUserListFm["filterText"].value);
+
+    Ajax.loadList("/restapi/users?" + queryString, function(result){
+        if(result.isSuccess){
+            renderUserList(userTable, result.data);
+        }else{
+            alert("load list failed!" + result.data.message);
+        }
+    });
+});
+
+function renderUserList(ele, data){
+
+    //remove tbody
+    ele.removeChild(ele.lastChild);
+
+    var tbody = document.createElement("tbody");
+    for(var i= 0,len = data.length; i<len; i++){
+        var tr = createRow(data[i]);
+        tbody.appendChild(tr);
+    }
+    ele.appendChild(tbody);
+
+}
 
 function createRow(user){
     var tr = document.createElement("tr");

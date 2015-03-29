@@ -58,7 +58,6 @@ var Ajax = {
                 callback(ajaxResult);
             }
         };
-        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
         xhr.open("get", url, false);
         xhr.send(null);
     },

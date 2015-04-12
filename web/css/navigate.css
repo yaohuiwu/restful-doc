@@ -1,0 +1,35 @@
+ul.navigate {
+    margin : 0;
+    padding: 0;
+    list-style-type: none;
+
+    width: 8em;
+    background-color: #8bD400;
+    border: 1px solid #486B02;
+}
+
+ul.navigate a {
+    display: block;
+    color: #2B3F00;
+    text-decoration: none;
+
+    border-top: 1px solid #E4FFD3;
+    border-bottom: 1px solid #486B02;
+    background: url(../image/arrow_064.gif) no-repeat 5% 50%;
+    padding: 0.3em 1em;
+}
+
+ul.navigate .last a{
+    border-bottom: 0;
+}
+
+ul.navigate a:hover,
+ul.navigate a:focus,
+ul.navigate .selected a{
+    color: #E4FFD3;
+    background-color: #6DA203;
+}
+
+ul.navigate li{
+    display: inline;
+}

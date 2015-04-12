@@ -1,7 +1,6 @@
 package com.duoshenyi.restapi.controller;
 
 import com.duoshenyi.restapi.controller.utils.ResponseEntities;
-import com.duoshenyi.restapi.controller.vo.ResultVo;
 import com.duoshenyi.restapi.controller.vo.UserParam;
 import com.duoshenyi.user.model.User;
 import com.duoshenyi.user.service.UserService;

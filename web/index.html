@@ -6,7 +6,12 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<title>Restful Doc:Restful Api Document Tools</title>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<link rel="stylesheet" type="text/css" href="css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<link rel="stylesheet" type="text/css" href="css/nav.css" />
+		<link rel="stylesheet" type="text/css" href="css/others.css" />
 	</head>
 	<body>
 		<div class="mainBoard">
@@ -21,17 +26,18 @@
 				</div>
 				<h1>Restful Document Tool</h1>
 			</div>
-			<div id="nav" class="nav">
-				<ul>
-					<li><a href="nav.html" target="iframe_a">主页</a></li>
-					<li><a href="user_register.html" target="iframe_a">注册用户</a></li>
-					<li><a href="user_list.html" target="iframe_a">用户列表</a></li>
-				</ul>
-			</div>
-			<iframe class="content" name="iframe_a" frameborder="0" width="100%">
-
+			<ul class="nav">
+				<li><a href="main.html" target="iframe_a">主页</a></li>
+				<li><a href="#">用户管理</a>
+					<ul>
+						<li><a href="user_register.html" target="iframe_a">注册用户</a></li>
+						<li><a href="user_list.html" target="iframe_a">用户列表</a></li>
+					</ul>
+				</li>
+			</ul>
+			<iframe class="content" name="iframe_a" frameborder="0" width="100%" src="main.html">
 			</iframe>
-			<div class="footer">Copy Right. 2015. www.duoshenyi.com</div>
+			<div class="footer">Copyright &copy;2015. 度身衣</div>
 		</div>
 	</body>
 </html>

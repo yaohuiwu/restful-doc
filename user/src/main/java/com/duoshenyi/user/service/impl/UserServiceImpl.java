@@ -82,7 +82,9 @@ public class UserServiceImpl implements UserService{
     public User removeUser(String userId) {
         Session session = sessionFactory.getCurrentSession();
         User user = (User)session.load(User.class, userId);
-        session.delete(user);
+        if(user != null){
+            session.delete(user);
+        }
         return user;
     }
 

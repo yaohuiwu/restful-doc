@@ -72,7 +72,23 @@ var Ajax = {
         };
         xhr.open("get", url, false);
         xhr.send(null);
+    },
+    delete : function(url, callback){
+        var xhr = this.createXHR();
+        //set listener before open.
+        xhr.onreadystatechange = function(event){
+            if(xhr.readyState == 4){
+                var ajaxResult = null;
+                if( typeof xhr.responseText != 'undefined' && xhr.responseText.length > 0){
+                    ajaxResult = new AjaxResult(JSON.parse(xhr.responseText), xhr.status,xhr.responseText);
+                }
+                callback(ajaxResult);
+            }
+        };
+        xhr.open("delete", url, false);
+        xhr.send(null);
     }
+
 };
 
 function AjaxResult( data, status, responseText){

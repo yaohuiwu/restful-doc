@@ -1,6 +1,7 @@
 package com.duoshenyi.restapi.controller;
 
 import com.duoshenyi.restapi.controller.utils.ResponseEntities;
+import com.duoshenyi.restapi.controller.vo.ResultVo;
 import com.duoshenyi.restapi.controller.vo.UserParam;
 import com.duoshenyi.user.model.User;
 import com.duoshenyi.user.service.UserService;
@@ -10,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -55,7 +53,14 @@ public class UserController {
 
     @RequestMapping(method = {RequestMethod.GET})
     public ResponseEntity<Object> getUsers(@RequestParam(value = "filterText", required = false) String filterText){
-        LOG.debug("filterText:{}", filterText);
+        LOG.trace("filterText:{}", filterText);
         return new ResponseEntity<Object>(userService.getUsers(filterText), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = {"/{id}"}, method = {RequestMethod.DELETE})
+    public ResponseEntity<Object> deleteUser(@PathVariable String id){
+        User user = userService.removeUser(id);
+        LOG.info("{} deleted", user);
+        return new ResponseEntity<Object>(HttpStatus.OK);
     }
 }

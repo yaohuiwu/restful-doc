@@ -1,0 +1,34 @@
+table.default {
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: center;
+    color: #333;
+    width: 100%;
+}
+
+table.default th, table.default td{
+    margin: 0;
+    padding: 0;
+}
+
+/*.th0 caption{*/
+/*font-size: 1.25em;*/
+/*padding-top: 0.692em;*/
+/*padding-bottom: 0.692em;*/
+/*background-color: #d4dd46;*/
+/*}*/
+
+table.default thead th {
+    background-color: #d4dd46;
+    border-bottom: 3px solid #a9bacb;
+    font-size: 1.087em;
+}
+
+table.default tbody tr:hover{
+    background-color: #d4dd46;
+}
+
+.default tbody td{
+    border-bottom: 1px solid #a9bacb;
+    text-align: left;
+}

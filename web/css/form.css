@@ -1,0 +1,22 @@
+fieldset{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+}
+legend{
+    font-weight: bold;
+}
+label {
+    width: 100px;
+    display: block;
+    cursor: pointer;
+}
+input{
+    width: 20em;
+    border: 1px solid grey;
+}
+.required {
+    font-size: 0.75em;
+    color: #760000;
+}
